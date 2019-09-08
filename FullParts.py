@@ -1,6 +1,9 @@
 import discord
+import os
+
 
 client = discord.client()
+
 
 @client.event
 async def on_ready():
@@ -15,5 +18,6 @@ async def on_message(message):
     if message.content.startswish("안녕"):
         await message.channel.send("안녕")
 
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 
-client.run("NjE5OTk5ODYxMDI2MTkzNDA4.XXQZ8w.oj-7HfHBMgy_frW80xdKv3rshYk")
